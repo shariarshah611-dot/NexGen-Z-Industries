@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexGen-Z Industries</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="loader">
+        <div class="loader-content">
+            <div class="loader-text">NEXGEN-Z INDUSTRIES</div>
+            <div class="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+            <div id="percent">0%</div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+    <div class="nav-container">
+        <div class="logo"></div>
+        <ul class="nav-links">
+            <li><a href="#" onclick="scrollToSection('home')">Home</a></li>
+            <li><a href="#" onclick="scrollToSection('about')">About</a></li>
+            <li><a href="#" onclick="scrollToSection('products')">Products</a></li>
+            <li><a href="#" onclick="scrollToSection('faq')">FAQ</a></li>
+            <li><a href="#" onclick="alert('Settings coming soon!')">Settings</a></li>
+            <li><a href="#" onclick="alert('How can we help?')">Help</a></li>
+        </ul>
+        <div class="menu-btn" onclick="toggleSidebar()">☰</div>
+    </div>
+</nav>
+
+    <div id="sidebar" class="sidebar">
+        <div class="close-btn" onclick="toggleSidebar()">×</div>
+        <ul class="side-links">
+            <li><a href="#" onclick="scrollToSection('home')">Home</a></li>
+            <li><a href="#" onclick="scrollToSection('about')">About</a></li>
+            <li><a href="#" onclick="scrollToSection('products')">Products</a></li>
+            <li><a href="#" onclick="scrollToSection('faq')">FAQ</a></li>
+        </ul>
+    </div>
+
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <h1><span>Most Famous Product</span></h1>
+            <h1>Hi! I'm <span>PikoBot</span></h1>
+            <p>Your Desk Companion | Focus Timer | Emotional AI</p>
+            <button class="btn-primary" onclick="scrollToSection('products')">Discover Piko Z</button>
+        </div>
+    </header>
+
+    <section class="about-section" id="about">
+        <h2>About PikoBot</h2>
+        <p>A new era of robotics. Designed and built by NexGen-Z Industries, a Bangladeshi startup creating real-life robots inspired by science fiction.</p>
+    </section>
+
+    <section class="products" id="products">
+        <h2>Choose Your Products</h2>
+        <div class="product-grid">
+            <div class="card">
+                <img src="p2.jpeg" alt="PikoBot">
+                <h3>PikoBot Transparent</h3>
+                <p class="price">2000 Taka</p>
+                <button class="buy-btn" onclick="openOrderForm('PikoBot Transparent', '2000 Taka')">Buy Now</button>
+            </div>
+            <div class="card popular">
+                <img src="p4.jpg" alt="PikoBot">
+                <h3>PikoBot Classic</h3>
+                <p class="price">1900 Taka</p>
+                <button class="buy-btn" onclick="openOrderForm('PikoBot Classic', '1900 Taka')">Buy Now</button>
+            </div>
+            <div class="card popular">
+                <img src="https://via.placeholder.com/200" alt="PikoBot">
+                <h3>PikoBot Classic</h3>
+                <p class="price">1900 Taka</p>
+                <button class="buy-btn" onclick="openOrderForm('PikoBot Classic', '1900 Taka')">Buy Now</button>
+            </div>
+                        <div class="card popular">
+                <img src="https://via.placeholder.com/200" alt="PikoBot">
+                <h3>PikoBot Classic</h3>
+                <p class="price">1900 Taka</p>
+                <button class="buy-btn" onclick="openOrderForm('PikoBot Classic', '1900 Taka')">Buy Now</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq" id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="accordion">
+            <div class="accordion-item">
+                <button class="accordion-header">What exactly is Pikobot?</button>
+                <div class="accordion-body">
+                    <p>Pikobot is a small desk robot that shows emotions and helps you stay focused.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeOrderForm()">&times;</span>
+            <h2>Complete Your Order</h2>
+            <form id="checkoutForm">
+                <input type="text" id="selectedProduct" readonly>
+                <input type="text" id="selectedPrice" readonly>
+                <input type="text" id="userName" placeholder="Full Name" required>
+                <input type="tel" id="userPhone" placeholder="Phone Number" required>
+                <textarea id="userAddress" placeholder="Delivery Address" rows="4" required></textarea>
+                <select id="paymentMethod" required>
+                    <option value="" disabled selected>Select Payment Method</option>
+                    <option value="Cash on Delivery">Cash on Delivery</option>
+                    <option value="Bkash (01302133194)">Bkash</option>
+                    <option value="Nagad (01302133194)">Nagad</option>
+                    <option value="Rocket (01302133194)">Rocket</option>
+                </select>
+                <button type="submit" class="confirm-btn">Confirm Order (via WhatsApp)</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

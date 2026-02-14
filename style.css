@@ -1,0 +1,179 @@
+/* আপনার দেওয়া অরিজিনাল সিএসএস কোড */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #04101CE6;
+    color: white;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.navbar {
+    background: #000000;
+    background-image: url('p1.png');
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    height: 66px;
+}
+
+.nav-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: left;    
+    gap: 10px;
+}
+
+/* --- এই অংশটুকু আপনার চাহিদা অনুযায়ী আপডেট করা হয়েছে --- */
+.nav-links {
+    background: rgba(125, 159, 197, 0.79);
+    list-style: none;
+    display: flex;
+    gap: 15px;      
+    padding: 5px; /* প্যাডিং একটু বাড়িয়ে ব্যালেন্স করা হয়েছে */
+    margin: 0;
+    border-radius: 15px;
+    height: 70px;
+    
+    /* স্ক্রল ফিচার যোগ করা হয়েছে */
+    overflow-x: auto; 
+    white-space: nowrap; 
+    max-width: 250px; /* বাটনগুলো নির্দিষ্ট জায়গার পর স্ক্রল হবে */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox-এর জন্য স্ক্রলবার হাইড */
+    -ms-overflow-style: none; /* IE/Edge-এর জন্য স্ক্রলবার হাইড */
+}
+
+/* Chrome/Safari-এর জন্য স্ক্রলবার হাইড */
+.nav-links::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-links li {
+    display: inline-block;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    nav-down: 5px;
+}
+
+/* লোগো সেকশন */
+.logo {
+    width: 120px;
+    height: 100px;
+    text-align: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* আপনার বাকি সব অরিজিনাল কোড নিচে অপরিবর্তিত রাখা হলো */
+.hero {
+    padding-top: 80px; 
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url("p3.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 80vh;
+}
+
+.hero h1 span { 
+    color: #00d4ff;
+}
+
+/* Product Section Layout */
+.products { 
+    padding: 50px 5%; 
+    text-align: center; 
+}
+
+.product-grid { 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px; 
+    justify-items: center;
+    margin-top: 30px; 
+}
+
+.card {
+    background: #505965;
+    padding: 15px;
+    border-radius: 15px;
+    width: 100%; 
+    max-width: 160px; 
+    position: relative;
+    border: 1px solid #30363d;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+@media (min-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+    }
+    .card {
+        max-width: 250px;
+        padding: 20px;
+    }
+}
+
+.card.popular { border: 2px solid #00d4ff; }
+.badge { position: absolute; top: -10px; right: 10px; background: #00d4ff; padding: 5px 10px; border-radius: 5px; font-size: 12px; }
+.price { font-weight: bold; margin: 15px 0; font-size: 1.1rem; }
+.buy-btn { background: #00d4ff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; width: 100%; }
+
+/* লোডার */
+#loader { position: fixed; width: 100%; height: 100%; background: #000; display: flex; justify-content: center; align-items: center; z-index: 9999; }
+.loader-content { text-align: center; width: 80%; max-width: 400px; }
+.progress-container { background: #333; height: 6px; border-radius: 10px; margin: 15px 0; overflow: hidden; }
+#progress-bar { width: 0%; height: 100%; background: #828; transition: width 0.1s; }
+#percent { font-size: 1.5rem; color: #53CC6A; font-weight: bold; }
+
+/* সাইডবার */
+.sidebar { position: fixed; top: 0; right: -300px; width: 250px; height: 100%; background: #238EAED6; z-index: 2000; padding: 40px 20px; transition: 0.4s ease-in-out; }
+.sidebar.active { right: 0; }
+.close-btn { font-size: 35px; cursor: pointer; color: white; text-align: right; }
+.side-links { list-style: none; padding-top: 40px; }
+.side-links li { margin: 25px 0; }
+.side-links a { color: white; text-decoration: none; font-size: 1.2rem; font-weight: bold; }
+.menu-btn { position: absolute; right: 20px; top: 20px; color: white; font-size: 24px; cursor: pointer; }
+
+/* অর্ডার ফরম */
+.modal { display: none; position: fixed; z-index: 3000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(5px); }
+.modal-content { background: #3FA1F363; margin: 5% auto; padding: 30px; border-radius: 20px; width: 80%; max-width: 450px; border: 1px solid greenyellow; position: relative; }
+.close { color: #fff; float: right; font-size: 30px; cursor: pointer; }
+#checkoutForm input, #checkoutForm textarea, #checkoutForm select { width: 100%; padding: 12px; margin: 10px 0; background: #0b0e14; border: 1px solid #30363d; color: #fff; border-radius: 8px; box-sizing: border-box; }
+.confirm-btn { width: 100%; background: greenyellow; color: #000; padding: 15px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+
+.btn-primary {
+    padding: 12px 30px;
+    background: #00d4ff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+}
